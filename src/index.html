@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.sass" />
+    <script
+      src="https://kit.fontawesome.com/e51af751df.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js" type="module" defer></script>
+    <title>Gerenciador de Despesas 💵</title>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Gerenciador de despesas 💵</h1>
+      <main class="expenser">
+        <header class="expenser__header neutral">
+          <span>Orçamento</span>
+          <div class="expenser__display--box">
+            <span>R$ </span>
+            <h1 class="expenser__display">0</h1>
+          </div>
+        </header>
+
+        <div class="expenser__content">
+          <div class="expenser__info">
+            <!-- <input
+              type="text"
+              class="expenser__description"
+              placeholder="Descrição"
+            /> -->
+
+            <select class="expenser__description">
+              <option value="ali" selected>Alimentação 🍴</option>
+              <option value="con">Contas 🧾</option>
+              <option value="com">Compras 💳</option>
+              <option value="edu">Educação 📚</option>
+              <option value="laz">Lazer 🎪</option>
+              <option value="luc">Lucro 💰</option>
+              <option value="sal">Salário 💵</option>
+              <option value="sau">Saúde 🏥</option>
+              <option value="tan">Transporte 🚍</option>
+              <option value="out">Outro ❔</option>
+            </select>
+
+            <input type="number" class="expenser__value" placeholder="Valor" />
+
+            <select class="expenser__type">
+              <option value="+" selected>+</option>
+              <option value="-">-</option>
+            </select>
+
+            <button class="expenser__btn">
+              <i class="fa-solid fa-circle-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="expenser__income">
+            <span class="expenser__title">Entradas</span>
+
+            <ul class="expenser__list"></ul>
+          </div>
+          <div class="expenser__expenses">
+            <span class="expenser__title">Saídas</span>
+
+            <div class="expenser__list"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap')
+
+// variables
+$atlantis: #5EC42E
+$crimson: #ef233c
+$scorpion: #5c5c5c
+$mercury: #EAEAEA
+
+$default-border-radius: 1rem
+    
+*, *::after, *::before
+    margin: 0
+    padding: 0
+    box-sizing: inherit
+
+html
+    font-size: 62.5%
+    
+body
+    box-sizing: border-box
+
+    font-family: 'Inter', sans-serif
+    font-size: 1.4rem
+    font-weight: bold
+
+button, input, select, option
+    border: none
+    font-family: inherit
+    font-size: inherit
+    font-weight: inherit
+    outline: none
+
+button, select
+    cursor: pointer
+
+option
+    font-size: 2rem
+    background-color: white
+
+.app
+    height: 100vh
+    width: 100%
+    padding: 4rem 40rem
+    background-color: #EAEAEA
+
+    text-align: center
+
+    display: grid
+    grid-template-rows: auto 1fr
+    gap: 2rem
+    flex: 0
+
+    *
+        transition: .5s
+
+    & > h1
+        color: $scorpion
+
+.expenser
+    border-radius: $default-border-radius
+    background-color: white
+    overflow: hidden
+
+    // box-shadow: 0px 0px 25px -5px rgba(0, 0, 0, 0.25)
+    
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto 1fr
+
+    &__header
+        padding: 5rem
+        background-color: transparent
+        position: relative
+        color: white
+
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        & span
+            font-size: 2.4rem
+
+        & h1
+            font-size: 4rem
+            font-weight: bold
+
+    &__display--box
+        display: flex
+        align-items: center
+        gap: 2rem
+    
+    &__content
+        height: 30rem
+        padding: 5rem
+        display: grid
+        grid-template-rows: auto 1fr
+        grid-template-columns: 1fr 1fr
+        place-items: center
+        gap: 3rem
+
+    &__info
+        display: flex
+        grid-column-start: span 2
+       
+        gap: 3rem
+
+    &__description, &__value, &__type,  &__btn
+        padding: 1rem 2rem
+        border-radius: $default-border-radius
+        background-color: #F6F6F6
+
+        &:active, &:focus, &:hover
+            background-color: darken(#F6F6F6, 10%)
+
+    &__description, &__value
+        &::placeholder
+            opacity: .5
+
+    &__type, &__btn
+        font-size: 2rem
+
+    &__title
+        font-weight: bold
+        text-transform: uppercase
+
+    &__income, &__expenses
+        height: 100%
+        width: 100%
+
+    &__income
+        .expenser__title, .expenser__item__value
+            color: #5EC42E
+
+    &__expenses
+        .expenser__title, .expenser__item__value
+            color: #ef233c
+
+    &__list
+        margin-top: 3rem
+        height: 45rem
+        padding: 2rem
+        overflow: auto
+        display: flex
+        flex-direction: column
+        gap: 1rem
+
+    &__item
+        padding: 1.5rem 2rem
+        border-radius: $default-border-radius
+        background-color: #F6F6F6
+        
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &:hover
+            box-shadow: 0px 0px 25px -5px rgba(0, 0, 0, 0.25)
+
+            .expenser__item__delete--btn
+                visibility: visible
+                opacity: 1
+            .expenser__item__value
+                transform: translateX(0)
+
+        &__info
+            display: flex
+            align-items: center
+            gap: 1rem
+
+        &__description
+            font-weight: bold
+
+        &__value
+            transform: translateX(10px)
+
+        &__delete
+
+            &--btn
+                font-size: 2rem
+                opacity: 0
+                visibility: hidden
+
+                & i
+                    pointer-events: none
+
+.neutral
+    background: #5c5c5c
+
+.positive
+    background: #5EC42E
+
+.negative
+    background: #ef233c
