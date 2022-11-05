@@ -39,6 +39,7 @@ const descriptionTypes = {
 
 // ---------------------------------------
 
+// Clear the inputs and remove focus from the elements
 const clear = () => {
   //   input__description.value = input__value.value = ''
   input__description.value = 'ali'
@@ -50,6 +51,7 @@ const clear = () => {
   addBtn.blur()
 }
 
+// Get all values from inputs
 const getInput = () => {
   const type = input__type.value
   const description = descriptionTypes[input__description.value]
@@ -64,16 +66,22 @@ const getInput = () => {
   }
 }
 
+// Renders UI elements
 const update = () => {
+  // Get all income elements
   const income__list__items = incomes.data
     .map((item) => list_item(item))
     .join('')
+
+  // Get all expenses elements
   const expense__list__items = expenses.data
     .map((item) => list_item(item))
     .join('')
 
+  // Get current budget
   const total = incomes.total - expenses.total
 
+  // Change background header color
   if (total === 0) {
     header.classList.remove('negative')
     header.classList.remove('positive')
@@ -88,11 +96,13 @@ const update = () => {
     header.classList.add('negative')
   }
 
+  // Puts content
   display.innerHTML = total.toFixed(2)
   income__list.innerHTML = income__list__items
   expenses__list.innerHTML = expense__list__items
 }
 
+// Adds data to income or expenses array
 const addItem = (data) => {
   if (data.type === '+') {
     incomes.data.push(data)
@@ -103,10 +113,10 @@ const addItem = (data) => {
   }
 }
 
+// Removes an income or expenses item
 const removeItem = (type, position) => {
   if (type === '+') {
     const income = incomes.data.splice(position, 1)[0]
-    console.log(income)
     incomes.total -= income.value
   } else if (type === '-') {
     const expense = expenses.data.splice(position, 1)[0]
@@ -118,16 +128,21 @@ const controlAddItem = () => {
   // Get input data
   const data = getInput()
 
+  // If theres no description, value or value is negative, nothign is done
   if (!data.description || !data.value || data.value < 0) return
 
+  // Add data to the array
   addItem(data)
 
+  // Renders UI
   update()
 }
 
 const controlRemoveItem = (type, position) => {
+  // Remove data from the array
   removeItem(type, position)
 
+  // Renders UI
   update()
 }
 
