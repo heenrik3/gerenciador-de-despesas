@@ -1,4 +1,4 @@
-# Gerenciador de Finanças Webapp
+# Gerenciador de Despesas Webapp
 
 - Tecnologias utilizadas:
 
