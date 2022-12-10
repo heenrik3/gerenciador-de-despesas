@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,8 @@
     "parcel": "^2.7.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.7.0"
+    "@parcel/packager-raw-url": "^2.8.1",
+    "@parcel/transformer-sass": "^2.7.0",
+    "@parcel/transformer-webmanifest": "^2.8.1"
   }
 }

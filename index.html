@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.sass" />
+    <link rel="stylesheet" href="src/main.sass" />
     <script
       src="https://kit.fontawesome.com/e51af751df.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js" type="module" defer></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <script src="src/js/app.js" type="module" defer></script>
     <title>Gerenciador de Despesas 💵</title>
   </head>
   <body>
@@ -26,12 +44,6 @@
 
         <div class="expenser__content">
           <div class="expenser__info">
-            <!-- <input
-              type="text"
-              class="expenser__description"
-              placeholder="Descrição"
-            /> -->
-
             <select class="expenser__description">
               <option value="ali" selected>Alimentação 🍴</option>
               <option value="con">Contas 🧾</option>
